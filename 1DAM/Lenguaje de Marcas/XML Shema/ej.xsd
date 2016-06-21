@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<element name="pelicula">
+<complexType> <!-- la etiqueta pelicula <pelicula></pelicula> no contiene datos si no otro elemento-->
+<sequence> <!-- y el orden-->
+<!-- en lugar de <sequense> se puede poner <all> que haria lo mismo pero sin importar el orden en el xml-->
+<!-- o <choice> que solo podria elegir un elemento de dentro en el xml-->
+<element name="titulo" type="string"/> <!-- cuanto una etiqueta tiene datos como <titulo>jdshfj</titulo> se pone el nombre y el tipo que va contener-->
+</sequence> 
+</complexType>
+</element>
+</schema>
+
+<!-- atributos-->
+<!--XML-->
+<pelicula estreno="1942" minutos="102 ">
+<titulo>Casablanca</titulo>
+<director>Michael Curtiz</director>
+</pelicula>
+<!--XSD-->
+<element name="pelicula">
+<complexType>
+<sequence>
+<element name="titulo" type="string"/>
+<element name="director" type="string"/>
+</sequence>
+<attribute name="estreno" type="string" > </attribute>
+<attribute name="minutos" type="integer"
+use="optional"<!-- o REQUIRED--> default ="100" > </attribute>
+</complexType>
+>/element>
+
+<!--elementos vacios-->
+<!--XML-->
+<clase genero="drama" />
+<!--XSD-->
+<element name="clase">
+<complexType>
+<attribute name="genero" type="string" use="required"/>
+</complexType>
+</element>
+
+
+<!-- Repeticiones de elementos-->
+
+<!--minOccurs contiene el valor mínimo del número de veces que el elemento puede aparecer
+en el documento.-->
+<!--maxOccurs contiene el número de veces máximo que un elemento puede aparecer en el
+documento.--><!--unbounded significa que no tiene límite-->
+
+<complexType>
+<sequence>
+<element name="interprete" minOccurs="0"
+maxOccurs="unbounded" type="string"/>
+</sequence>

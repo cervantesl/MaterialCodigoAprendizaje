@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<compraVenta>
+    <marca>Marca</marca>
+    <modelo>modelo</modelo>
+    <motor>motor</motor>
+    <matricula>matricula</matricula>
+    <kilometros>kilometros</kilometros>
+    <precioOriginal>precio original</precioOriginal>
+    <precioOferta>precio oferta</precioOferta>
+    <extras>extras</extras>
+    <fotos>foto</fotos>
+</compraVenta>

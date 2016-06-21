@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:element name="factura"></xs:element>
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="datos-emisor"></xs:element>
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="nombre" type="string"></xs:element>
+                    <xs:element name="cif" type="string"></xs:element>
+                    
+                    <xs:element name="telefono" type="integer"></xs:element>
+                </xs:sequence>            
+            </xs:complexType>
+        <xs:element name="datos-cliente"></xs:element>
+            <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombre" type="string"></xs:element>
+                          <xs:restriction base="xs:decimal">
+                              <xs:minInclusive value="5" fixed="true" />
+                              <xs:maxInclusive value="20" fixed="true" />
+                              </xs:restriction>
+                        <xs:element name="cif" type="string"></xs:element>
+                            <sx:pattern value="{9}-[A-Z]{1}"></sx:pattern>
+                        <xs:element name="telefono" type="integer"></xs:element>
+                          <sx:pattern value="{9}"></sx:pattern>
+                    </xs:sequence>            
+                </xs:complexType>
+        <xs:element name="detalles-factura"></xs:element>
+          <xs:complexType>
+              <xs:sequence>
+                  <xs:element name="linea"></xs:element>
+                      <xs:restriction base="xs:decimal">
+                          <xs:minInclusive value="1" fixed="true" />
+                          <xs:maxInclusive value="15" fixed="true" />
+                      </xs:restriction>
+                      <xs:complexType>
+                          <xs:sequence>
+                              <xs:element name="descripcion" type="string"></xs:element>
+                                  <xs:restriction base="xs:decimal">
+                                    <xs:minInclusive value="0" fixed="true" />
+                                    <xs:maxInclusive value="10" fixed="true" />
+                                   </xs:restriction> 
+                              <xs:ID name="cantidad" type="integer"></xs:ID>
+                                <xs:simpleType name="TipoPrecio">
+                                      <xs:restriction base="xs:decimal">
+                                          <xs:minLength value="0" />
+                                          <xs:maxLength value="99"/>
+                                      </xs:restriction>
+                                  </xs:simpleType>
+                              <xs:element name="oferta"></xs:element>
+                              <xs:element name="pvp" type="float"></xs:element>
+                                <xs:simpleType name="TipoPrecio">
+                                    <xs:restriction base="xs:decimal">
+                                        <xs:minLength value="0" />
+                                        <xs:maxLength value="99"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                          </xs:sequence>
+                          <ID name="codigo-artiulo" type="string"></ID>
+                          <atribute name="tipo" type="string"></atribute>
+                            <xs:simpleType name="TipoArticulo">
+                              
+                            </xs:simpleType>
+                      </xs:complexType>              
+              </xs:sequence>          
+          </xs:complexType>
+      </xs:all>
+      <atribute name="numero" type="integer" ></atribute>
+      <ID name="fecha" type="date"></ID>
+      <atribute name="moneda" type="string"></atribute>
+    </xs:complexType>
+</xs:schema>
+    

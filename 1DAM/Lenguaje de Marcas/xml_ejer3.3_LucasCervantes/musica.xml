@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<discos>
+  <disco>
+    <titulo>titulo</titulo>
+    <precio>precio</precio> 
+    <pistas>pistas</pistas>
+    <canciones>canciones</canciones>
+    <duracion>duracion</duracion>
+    <cantante>
+      <nombre>nombre cantante</nombre>
+      <nacionalidad>nacionalidad cantante</nacionalidad>
+      <edad>edad cantante</edad>    
+    </cantante> 
+    <produtora>productora</produtora>
+    <colaboraciones>colaboraciones</colaboraciones>
+    <codigoBarras>codigo barras</codigoBarras>
+  </disco>
+</discos>

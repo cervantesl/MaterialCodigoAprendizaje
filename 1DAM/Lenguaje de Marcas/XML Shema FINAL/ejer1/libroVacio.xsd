@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="libros">    </xs:element>
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="libro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titulo" type="string"/>
+                <xs:element name="autor" type="string"/>
+                <xs:element name="any" type="integer"/>            
+                <xs:element name="precio_moneda" type="double"/>
+                <xs:complexType>
+                 <atribute name="moneda" type="string"/>
+                 </xs:complexType>
+                 <xs:element name="editorial" type="string"/>
+                 <xs:element name="clasificacion" type="string"/>
+                 <xs:element name="idioma" type="string"/>
+            </xs:sequence>      
+             <atribute name="moneda" type="string"/>  
+        </xs:complexType>      
+      </xs:element>  
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<libreria>
+  <libro>
+    <isbn>isbn</isbn>
+    <titulo>titulo</titulo>  
+    <nivelMateria>basico,intermedio,avanzado</nivelMateria>
+    <autores>autores</autores>
+    <editorial>editorial</editorial>
+    <fechaPublicacion>fecha de publicacion</fechaPublicacion>
+    <paginaWeb>pagina web</paginaWeb>
+    <precio>precio</precio>
+  </libro>
+</libreria>

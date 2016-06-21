@@ -1,0 +1,40 @@
+<!html DOCTYPE>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Formulario - Lucas Cervantes</title>
+	</head>
+<body>
+<h1>Rellena tu CV</h1>
+	<form action="datos.php" method="GET">
+		<label for="nombre">Nombre</label><br/>
+		<input type ="text" placeholder="Escribe tu nombre" id="nombre"><br/><br/>
+
+		<label for="apelidos">Apellidos</label><br/>
+		<input type ="text" placeholder="Escribe tus apellidos" id="apellidos" size="30"><br/><br/>
+
+		<label for="comtraseña">Contraseña</label><br/>
+		<input type ="password" placeholder="Escribe tu contraseña" id="contraseña"><br/><br/>
+
+		<label for="dni">DNI</label><br/>
+		<input type ="text" placeholder="Escribe tu DNI" id="dni"><br/><br/>
+		
+
+		<label for="sexo">Sexo</label><br/>
+		<input type ="radio" placeholder="" id="sexo">Hombre<br/>
+		<input type ="radio" placeholder="" id="sexo">Mujer<br/><br/>
+		
+
+		<label for="foto">Incluir mi foto</label>
+		<input type ="text" placeholder="" id="foto">
+		<input type ="button" placeholder="" id="foto" value ="Elegir..."><br/><br/>
+
+		<input type ="checkbox" placeholder="">Suscribirme al boletin de novedades<br/><br/>
+
+		<input type ="button" placeholder=""value ="Guardar cambios">
+		<input type ="button" placeholder=""value ="Borrar los datos introducidos">
+	</form>
+
+</body>
+</html>

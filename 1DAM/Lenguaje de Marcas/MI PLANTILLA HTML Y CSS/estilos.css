@@ -1,0 +1,73 @@
+/*Para quitar los margenes del navegador*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*Para ponerle un fondo, tipo de letra, tamaño...*/
+body{
+	background: #e6e6e6;
+}
+
+header, .main, footer {
+	width: 90%;/*tamaño horizontal*/
+	max-width: 1000px;/*como mucho llege a mil px*/
+	margin:auto;/*centrar*/
+	margin: 20px auto; /*un margen entre las secciones*/
+}
+
+header nav {
+	background: #528fd5; /*fondo del nav*/
+	overflow: hidden; /*para que funcione el float left*/
+	margin-top: 10px; /*margen entre el nav y el logotipo*/
+}
+
+header nav ul {
+	list-style: none;/*quitar los puntitos*/
+
+}
+
+header ul li {
+	float: left; /*Para que no esten uno debajo de otro*/
+	padding-left: 100px;
+}
+
+header nav ul li a{
+	padding: 10px 80px;
+	display: block;/*Para que funcione el padding*/
+	color: #fff;
+	text-decoration: none;
+}
+
+header nav ul li a:hover{
+	background: #75acec;
+}
+
+.main .articles {
+	width: 68.5%;
+	float: left;
+	margin-right: 1.5%;/*para que tenga un margen, restar al width*/
+
+}
+
+.main .articles article{
+	padding: 20px;/*para que tenga un margen interno*/
+	background: #fff;
+	margin-bottom: 20px;/*margen hacia abajo*/
+}
+
+aside{
+	width: 30%; /*le damos el porcentaje restante*/
+	background:#ff8000;
+	float: left; /*le damos el porcentaje restante*/
+	padding: 20px; /*margen interno*/
+	box-sizing:border-box; /*para que el width y el padding no se descuadre*/
+}
+
+footer{
+	background:#000;
+	color:#fff;
+	clear: both;/*limpia los float left y que no sea visible*/
+	padding: 10px 0px;/*margen centrado 10px hacia arriba y abajo y 0 a los lados*/
+	text-align: center;
+}

@@ -1,0 +1,11 @@
+nombre:apellido:ciudad:edad:telefono
+
+maria:garcia:tavernes:24:655233214
+
+juan:ferrer:gandia:23:655448782
+
+luis:guerra:xeraco:20:654789503
+
+veronica:miralles:tavernes:21:654778001
+
+marta:llopis:cullera:27:640100032
