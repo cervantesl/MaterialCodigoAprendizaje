@@ -56,6 +56,9 @@ public class Imagenes {
         
         g.drawImage(imagen, 20, 20, null);
         
+        //g.copyArea(WIDTH, WIDTH, WIDTH, WIDTH, WIDTH, WIDTH); Sirve para coopiar la imagen en varios sitios
+        
+        //getWidth y getHeight sirve para saber el tamaño de una imagen
     }
     
 }
