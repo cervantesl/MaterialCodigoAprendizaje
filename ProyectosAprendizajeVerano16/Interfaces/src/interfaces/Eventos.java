@@ -7,6 +7,8 @@ package interfaces;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,7 +17,7 @@ import javax.swing.JPanel;
  *
  * @author Lucas
  */
-public class Eventos {
+public class Eventos{
     public static Eventos eventos;
     public RendererII renderer;
     
@@ -29,6 +31,7 @@ public class Eventos {
         jframe.setVisible(true);
         jframe.setResizable(false);
         jframe.add(renderer);
+     
     }
     
     public void Paint(Graphics g){
@@ -49,30 +52,46 @@ public class Eventos {
         
         g.setColor(Color.RED);
         g.fillRect(WHIDTH / 2, HEIGHT / 2, 20, 20);
-        
+
     }
-    
-    
-    
+
     
     public static void main(String[] args) {
         eventos = new Eventos();
     }
 }
 
-class RendererII extends JPanel{
-      JButton boton = new JButton("Blue");
-        
-        public RendererII(){
-            add(boton);
-        }
+class RendererII extends JPanel implements ActionListener{
+    JButton boton = new JButton("Blue");
+    JButton botonRojo = new JButton("Red");
     
-    @Override
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
+    public RendererII(){
+        add(boton);
+        boton.addActionListener(this); //Al hacer click Harás, el this es donde hará referencia
         
-        Eventos.eventos.Paint(g);
-        
-      
+        add(botonRojo);
+        botonRojo.addActionListener(this);
     }
+    
+//    @Override
+//    public void paintComponent(Graphics g){
+//        super.paintComponent(g);
+//        
+//        Eventos.eventos.Paint(g);
+//        
+//      
+//    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        Object botonPulsado = ae.getSource(); //Deveulve quie es la fuente, el origen de la accion
+        if(botonPulsado.equals(boton)){
+            setBackground(Color.BLUE);
+        }
+        else{
+            setBackground(Color.RED);
+        }
+        
+    }
+
 }
