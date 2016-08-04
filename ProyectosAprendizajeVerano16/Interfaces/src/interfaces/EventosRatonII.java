@@ -63,7 +63,7 @@ class RatonII extends MouseAdapter implements MouseMotionListener{
     
     @Override
     public void mouseDragged(MouseEvent me){
-        System.out.println("Estas arrastrando");
+        System.out.println("Estas arrastrando!");
     }
     
     @Override

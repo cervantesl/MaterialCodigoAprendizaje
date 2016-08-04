@@ -5,28 +5,22 @@
  */
 package agendainterfaz;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import javax.swing.JFrame;
 
 /**
  *
  * @author Lucas
  */
-public class AgendaInterfaz {
+public class AgendaInterfaz{
 
-   public static AgendaInterfaz agenda;
-   
-   public AgendaInterfaz(){
-       JFrame jframe = new JFrame();
-       jframe.setSize(600, 900);
-       jframe.setVisible(true);
-       jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       jframe.setLocation(200, 100);
-       jframe.setResizable(false);
-       jframe.setTitle("Agenda");
-   }
-   
     public static void main(String[] args) {
-        agenda = new AgendaInterfaz();
+        Marco agenda = new Marco();
+        
+        agenda.setVisible(true);
+        agenda.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }
