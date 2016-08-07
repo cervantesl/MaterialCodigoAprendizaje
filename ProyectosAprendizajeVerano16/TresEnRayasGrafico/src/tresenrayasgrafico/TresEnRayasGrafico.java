@@ -9,39 +9,64 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 /**
  *
  * @author Lucas
  */
-public class TresEnRayasGrafico implements ActionListener, MouseListener{
+public class TresEnRayasGrafico implements ActionListener, MouseListener, KeyListener{
 
-    public final int WIDTH = 500, HEIGTH = 500;
+    public final int WIDTH = 800, HEIGHT = 800;
     
     public static TresEnRayasGrafico tenrg;
     
     public Renderer renderer;
     
-    public int gameStatus = 2;
+    public int gameStatus, turno, cuadro, jugador;
+    
+    public char pieza;
+    
+    public char[][] tablero;
+    
+    public boolean start;
     
     public TresEnRayasGrafico() {
         
         JFrame jframe = new JFrame("Tres en Rayas");
-        
+        Timer timer = new Timer(20,this);
         renderer = new Renderer();
         
         jframe.setVisible(true);
         jframe.setResizable(false);
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jframe.setSize(WIDTH, HEIGTH);
+        jframe.setSize(WIDTH, HEIGHT);
         jframe.add(renderer);
         jframe.addMouseListener(this);
+        jframe.addKeyListener(this);
         
+        start();
+        turno();
+        timer.start();
+        
+    }
+    
+    public void start(){
+        tablero = new char[3][3];
+        gameStatus = 0;
+        turno = 0;
+        start = false;
+        cuadro = 99;
+        pieza = 'X';
+        jugador = 0;
     }
             
     public static void main(String[] args) {
@@ -49,26 +74,53 @@ public class TresEnRayasGrafico implements ActionListener, MouseListener{
         tenrg = new TresEnRayasGrafico();
         
     }
+    
+    public void turno(){
+
+        if (turno % 2 == 1) {
+            pieza = 'X';
+            jugador = 1;
+        }
+        else{
+            pieza = 'O';
+            jugador = 2;
+        }
+        
+        turno++;
+    }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-
-        renderer.repaint();
+    
         
+       switch(cuadro){
+           case 0: tablero[0][0] = pieza; break;
+           case 1: tablero[0][0] = pieza; break;
+           case 2: tablero[0][0] = pieza; break;
+           case 3: tablero[0][0] = pieza; break;
+           case 4: tablero[0][0] = pieza; break;
+       }
+       
+       renderer.repaint();
     }
 
     @Override
     public void mouseClicked(MouseEvent me) {
         
-        //WIDTH (X): 4 , HEIGHT (Y): 33
-        //WIDTH (X): 150 , HEIGHT (Y): 181
-        System.out.println("WIDTH (X): "+me.getX()+" , HEIGHT (Y): "+me.getY());
         
-        if (me.getX() >= 4 ) {
+        int x = me.getX();
+        int y = me.getY();
+        
+        //Inicio
+        if (x >= 1 && y >= 1) {
+            gameStatus = 3;
+        }
+        
+        //Primer cuadro
+        if (x >= 4 && y <= 325) {
             
-            gameStatus = 1;
+            cuadro = 0;
             
-            System.out.println(gameStatus);
         }
     }
 
@@ -85,47 +137,85 @@ public class TresEnRayasGrafico implements ActionListener, MouseListener{
     public void mouseExited(MouseEvent me) {    }
 
     public void render(Graphics2D g) {
-
-        if (gameStatus == 0) {
-            
         
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, WIDTH, WIDTH);
+        
+        if (gameStatus == 0){
+            g.setColor(Color.WHITE);
+            g.setFont(new Font("Arial", 1, 50));
+            g.drawString("Tres en Rayas", WIDTH / 2 - 150, 100);
+            
+            g.setFont(new Font("Arial", 1, 30));
+            g.drawString("Aprieta ESPACIO para empezar", WIDTH / 2 - 200, 300);
+            
+            g.setFont(new Font("Arial", 1, 30));
+            g.drawString("Hecho por: Lucas Cervantes", WIDTH / 2 - 200, 700);
+        }
+        
+        if (start) {
+            
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, WIDTH, WIDTH);
 
             g.setColor(Color.WHITE);
             g.setStroke(new BasicStroke(5f));
-            g.drawLine(WIDTH / 2 - 100, 50, WIDTH / 2 - 100, HEIGTH - 50);
+            g.drawLine(WIDTH / 2 - 100, 100, WIDTH / 2 - 100, HEIGHT - 100);
 
             g.setColor(Color.WHITE);
-            g.drawLine(WIDTH / 2 + 100, 50, WIDTH / 2 + 100, HEIGTH - 50);
+            g.drawLine(WIDTH / 2 + 100, 100, WIDTH / 2 + 100, HEIGHT - 100);
 
             g.setColor(Color.WHITE);
-            g.drawLine(WIDTH - 50, HEIGTH / 2 - 100, 50, HEIGTH / 2 - 100);
-
+            g.drawLine(WIDTH - 100, HEIGHT / 2 - 100, 100, HEIGHT / 2 - 100);
             g.setColor(Color.WHITE);
-            g.drawLine(WIDTH - 50 , HEIGTH / 2 + 50, 50, HEIGTH / 2 + 50);
+            g.drawLine(WIDTH - 100 , HEIGHT / 2 + 100, 100, HEIGHT / 2 + 100);
+        }
+
+            g.setFont(new Font("Arial", 1, 30));
+            g.drawString("Jugador 1: X \t Jugador 2: O", WIDTH / 2 - 200, 40);
+           
+            if (cuadro == 0 && jugador == 1) {
+                
+                g.setColor(Color.WHITE);
+                g.setStroke(new BasicStroke(2f));
+                g.drawLine(250 , 250, 90, 100);
+
+                g.setColor(Color.WHITE);
+                g.setStroke(new BasicStroke(2f));
+                g.drawLine(250 , 100, 100, 250);
+             
+            }
             
+            if (cuadro == 0 && jugador == 2) {
+                g.setColor(Color.WHITE);
+                g.setStroke(new BasicStroke(2f));
+                g.drawOval(150 , 110, 100, 150);
+               
+            }
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent ke) {
+
+        int id = ke.getKeyCode();
+        
+        if (id == KeyEvent.VK_SPACE) {
+            
+            start = true;
+            gameStatus = 2;
         }
         
-        else if (gameStatus == 1) {
-            
-             g.setColor(Color.BLACK);
-            g.fillRect(0, 0, WIDTH, WIDTH);
+    }
 
-            g.setColor(Color.WHITE);
-            g.setStroke(new BasicStroke(5f));
-            g.drawLine(WIDTH / 2 - 100, 50, WIDTH / 2 - 100, HEIGTH - 50);
+    @Override
+    public void keyReleased(KeyEvent ke) {
 
-            g.setColor(Color.WHITE);
-            g.drawLine(WIDTH / 2 + 100, 50, WIDTH / 2 + 100, HEIGTH - 50);
-
-            g.setColor(Color.WHITE);
-            g.drawLine(WIDTH - 50, HEIGTH / 2 - 100, 50, HEIGTH / 2 - 100);
-
-            g.setColor(Color.WHITE);
-            g.drawLine(WIDTH - 50 , HEIGTH / 2 + 50, 50, HEIGTH / 2 + 50);
-
-        }
     }
     
 }
