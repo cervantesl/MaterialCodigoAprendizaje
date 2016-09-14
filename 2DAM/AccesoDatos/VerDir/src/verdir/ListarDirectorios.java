@@ -5,12 +5,11 @@ import java.io.File;
 //==========================================
 // LUCAS CERVANTES LEONEZ 2 DAM
 //==========================================
-
 public class ListarDirectorios {
 
     public static void main(String[] args) {
 
-        listarDirectorio(".", 3);
+        listarDirectorio("C:\\Users\\Lucas\\Documents", 2);
     }
 
     public static void listarDirectorio(String directorio, int tipoLista) {
@@ -18,7 +17,7 @@ public class ListarDirectorios {
         System.out.println("Informacion sobre el directorio: " + directorio);
 
         File f = new File(directorio);
-        
+
         switch (tipoLista) {
             case 1:
                 verDirectorioLista(f);
@@ -79,7 +78,7 @@ public class ListarDirectorios {
         }
     }
 
-    public static void verDirectorioTabla(File f) { 
+    public static void verDirectorioTabla(File f) {
 
         if (f.isDirectory()) {
             File[] archivos = f.listFiles();
@@ -102,6 +101,12 @@ public class ListarDirectorios {
                 } else {
                     System.out.print("-");
                 }
+//                if (archivos[i].getName().length() < 40) {
+//                    while(archivos[i].getName().length() < 40) {
+//                        
+//                    }
+//                }
+
                 System.out.println("\t" + archivos[i].length() + "\t" + archivos[i].getName());
             }
         } else {
