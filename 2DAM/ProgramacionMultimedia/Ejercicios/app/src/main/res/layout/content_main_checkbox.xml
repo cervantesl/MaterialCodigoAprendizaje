@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".CheckBoxActivity"
+    tools:showIn="@layout/checkbox_activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estamos en la segunda actividad"
+        android:id="@+id/textView" />
+    <CheckBox
+        android:id="@+id/checkbox_carne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/carne"
+        android:onClick="onCheckboxClicked"
+        android:layout_below="@+id/checkbox_pescado"
+        android:layout_alignLeft="@+id/checkbox_pescado"
+        android:layout_alignStart="@+id/checkbox_pescado"
+        android:layout_marginTop="34dp" />
+    <CheckBox
+        android:id="@+id/checkbox_pescado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pescado"
+        android:onClick="onCheckboxClicked"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/grupoRadio"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hombre"
+            android:id="@+id/radioButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mujer"
+            android:id="@+id/radioButton2" />
+    </RadioGroup>
+</RelativeLayout>

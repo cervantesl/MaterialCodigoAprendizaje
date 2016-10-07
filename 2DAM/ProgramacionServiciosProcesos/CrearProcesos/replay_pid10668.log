@@ -1,0 +1,41 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 242 ciObject found
+ciMethod java/lang/Object <init> ()V 4097 1 48674 0 -1
+ciMethod java/lang/Object clone ()Ljava/lang/Object; 2049 1 256 0 -1
+ciMethod java/lang/Object toString ()Ljava/lang/String; 0 0 1 0 -1
+ciMethod java/lang/String <init> ([CII)V 3081 1 5599 0 -1
+ciMethod java/lang/String valueOf (Ljava/lang/Object;)Ljava/lang/String; 193 1 32 0 -1
+ciMethod java/lang/Class getTypeParameters ()[Ljava/lang/reflect/TypeVariable; 2185 1 2628 0 -1
+ciMethod java/lang/Class getEnclosingClass ()Ljava/lang/Class; 1569 1 435 0 -1
+ciMethod java/lang/ref/Reference get ()Ljava/lang/Object; 1193 1 149 0 -1
+ciMethod java/lang/reflect/Method getGenericSignature ()Ljava/lang/String; 1153 1 144 0 -1
+ciMethod java/lang/reflect/Method getFactory ()Lsun/reflect/generics/factory/GenericsFactory; 25 1 60 0 -1
+ciMethod java/lang/reflect/Method getGenericInfo ()Lsun/reflect/generics/repository/MethodRepository; 193 1 670 0 -1
+ciMethod java/lang/reflect/Method hasGenericInformation ()Z 2073 1 4468 0 -1
+ciMethod java/lang/reflect/Method getDeclaringClass ()Ljava/lang/Class; 1041 1 130 0 -1
+ciMethod java/lang/reflect/Method getName ()Ljava/lang/String; 2977 1 372 0 -1
+ciMethod java/lang/reflect/Method getReturnType ()Ljava/lang/Class; 33505 1 4188 0 -1
+ciMethod java/lang/reflect/Method getGenericReturnType ()Ljava/lang/reflect/Type; 2105 1 2342 0 -1
+ciMethod java/lang/reflect/Method getParameterTypes ()[Ljava/lang/Class; 1377 1 3929 0 -1
+ciMethod java/lang/reflect/Method getGenericParameterTypes ()[Ljava/lang/reflect/Type; 2825 1 3120 0 -1
+ciMethod java/lang/reflect/Method toString ()Ljava/lang/String; 0 0 1 0 -1
+ciMethod java/lang/reflect/Method isDefault ()Z 2249 1 8123 0 -1
+ciMethod java/lang/reflect/Method getGenericInfo ()Lsun/reflect/generics/repository/ConstructorRepository; 97 1 320 0 -1
+ciMethod java/lang/reflect/Executable hasGenericInformation ()Z 0 0 1 0 -1
+ciMethod java/lang/reflect/Executable getGenericInfo ()Lsun/reflect/generics/repository/ConstructorRepository; 0 0 1 0 -1
+ciMethod java/lang/reflect/Executable sharedToString (IZ[Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/String; 0 0 1 0 -1
+ciMethod java/lang/reflect/Executable getParameterTypes ()[Ljava/lang/Class; 0 0 1 0 -1
+ciMethod java/lang/reflect/Executable getGenericParameterTypes ()[Ljava/lang/reflect/Type; 2825 1 3120 0 -1
+ciMethod java/lang/AbstractStringBuilder <init> (I)V 1065 1 7822 0 -1
+ciMethod java/lang/AbstractStringBuilder append (Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; 1953 1 9772 0 -1
+ciMethod java/lang/StringBuilder <init> ()V 841 1 5969 0 -1
+ciMethod java/lang/StringBuilder append (Ljava/lang/Object;)Ljava/lang/StringBuilder; 177 1 30 0 -1
+ciMethod java/lang/StringBuilder append (Ljava/lang/String;)Ljava/lang/StringBuilder; 1721 1 11832 0 -1
+ciMethod java/lang/StringBuilder toString ()Ljava/lang/String; 913 1 7044 0 -1
+ciMethod sun/reflect/generics/repository/GenericDeclRepository <init> (Ljava/lang/String;Lsun/reflect/generics/factory/GenericsFactory;)V 49 1 73 0 -1
+ciMethod sun/reflect/generics/repository/AbstractRepository <init> (Ljava/lang/String;Lsun/reflect/generics/factory/GenericsFactory;)V 49 1 73 0 -1
+ciMethod java/lang/reflect/Modifier methodModifiers ()I 1753 1 1035 0 -1
+ciMethodData java/lang/Object <init> ()V 2 48674 orig 264 8 193 105 110 0 0 0 0 128 4 245 22 0 0 0 0 32 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 17 225 5 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 3 0 1 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 0 0 0 0 data 0 oops 0
+ciMethodData java/lang/StringBuilder <init> ()V 2 5969 orig 264 8 193 105 110 0 0 0 0 32 116 252 
