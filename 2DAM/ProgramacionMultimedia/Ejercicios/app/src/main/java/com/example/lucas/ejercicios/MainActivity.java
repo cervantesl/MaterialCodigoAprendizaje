@@ -2,8 +2,6 @@ package com.example.lucas.ejercicios;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -16,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    final String[] listOptions = new String[] {"Ejercicio.1: CheckBox ", "Ejercicio.2: WebView", "Ejercicio.3: "};
+    final String[] listOptions = new String[] {"Ejercicio.1: CheckBox ", "Ejercicio.2: WebViewActivity", "Ejercicio.3: MENU"};
     private ListView options;
 
     @Override
@@ -53,13 +51,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 1:
-                intent = new Intent(this, WebView.class);
+                intent = new Intent(this, WebViewActivity.class);
                 startActivity(intent);
                 break;
             case 2:
-                intent = new Intent();
+                intent = new Intent(this, MenuActivity.class);
                 startActivity(intent);
                 break;
+
         }
     }
 
@@ -85,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if(id == R.id.webview) {
-            Intent intent = new Intent(this, WebView.class);
+            Intent intent = new Intent(this, WebViewActivity.class);
             startActivity(intent);
             return true;
         }

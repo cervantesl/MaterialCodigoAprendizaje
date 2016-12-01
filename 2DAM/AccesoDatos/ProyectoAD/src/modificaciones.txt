@@ -1,0 +1,7 @@
+id,nombre,apellidos,email,telefono,aprobadas,suspendidas
+473,Roberto,Blanes Martinez,EMIANDSAS.DAM@ieseljust.com,666555941,3,7
+474,Victor,Bofi Pajares,VICBOFPAJ.DAM@ieseljust.com,666555942,10,0
+484,Lucia,Serer Ivars,LUCSERIVA.DAM@ieseljust.com,666555952,0,10
+485,Paul,Suciu Sorin,PAUSUCSOR.DAM@i'eseljust.com,666555953,10,0
+486,Federico,Garcia Garcia,FGARCIA.DAM@ieseljust.dom,666555054,9,1
+476,Sergio,Girona Martinez,SERGIRMAR.DAM@ieseljust.com,666555044,5,5

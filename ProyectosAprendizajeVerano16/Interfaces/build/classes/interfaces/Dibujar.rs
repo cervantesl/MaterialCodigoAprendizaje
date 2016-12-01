@@ -1,2 +1,0 @@
-interfaces.Rendererr
-interfaces.Dibujar

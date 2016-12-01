@@ -1,10 +1,8 @@
 package secuencianumerosaleatorios;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -15,9 +13,7 @@ import java.util.Collections;
  */
 public class SecuenciaNumerosAleatorios {
 
-    static ArrayList generarNumerosAleatorios(int cantidadNumerosAleatorios, char opcion) throws IOException {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static ArrayList<Integer> generarNumerosAleatorios(int cantidadNumerosAleatorios, char opcion) throws IOException {
 
         ArrayList<Integer> numerosAleatorios = new ArrayList<>();
 
@@ -25,14 +21,9 @@ public class SecuenciaNumerosAleatorios {
                 + "\\ProgramacionServiciosProcesos\\SecuenciaNumerosAleatorios\\src\\secuencianumerosaleatorios\\aleatorios.txt");
         FileWriter fw = new FileWriter(f, false);
 
-        System.out.println("MENU");
-        System.out.println("p : mostrar numeros por pantalla entre [1000-2000]");
-        System.out.println("f : almacenar numeros en archivo");
-        System.out.println("Selecciona: ");
-        opcion = (char) br.read();
-
         switch (opcion) {
             case 'p':
+                System.out.println("Elementos desordenados:");
                 for (int i = 0; i < cantidadNumerosAleatorios; i++) {
                     numerosAleatorios.add((int) (Math.random() * 1000) + 1000);
                 }
@@ -53,7 +44,8 @@ public class SecuenciaNumerosAleatorios {
 
     }
 
-    static ArrayList ordenarNumeros(ArrayList numerosAleatorios) {
+    static ArrayList<Integer> ordenarNumeros(ArrayList numerosAleatorios) {
+        
         ArrayList<Integer> numerosAleatoriosOrdenados = new ArrayList<>();
 
         for (int i = 0; i < numerosAleatorios.size(); i++) {
@@ -73,20 +65,12 @@ public class SecuenciaNumerosAleatorios {
             
             System.out.println(listaOrdenada.toString());
     }
-    
-    static void prueba() throws IOException {
-        ArrayList prueba = new ArrayList();
-        
-        for (int i = 0; i < 1000; i++) {
-            prueba.add((int) (Math.random() * 1000) + 1000);
-        }
-        
-        System.out.println(prueba.toString());
-    }
 
     public static void main(String[] args) throws IOException {
-//(char) Integer.parseInt(args[1])
-        aleatoriosOrdenados(Integer.parseInt(args[0]),'p' );
+
+        aleatoriosOrdenados(Integer.parseInt(args[0]), args[1].charAt(0));
+        
+        Process p=Runtime.getRuntime().exec("");
 
     }
 

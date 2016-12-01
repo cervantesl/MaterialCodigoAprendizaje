@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lucas.ejercicios">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,15 +23,17 @@
         <activity
             android:name=".CheckBoxActivity"
             android:label="@string/checkbox"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".WebView"
-            android:label="@string/webview"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".WebViewActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait"/>
-
+            android:label="@string/webview"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

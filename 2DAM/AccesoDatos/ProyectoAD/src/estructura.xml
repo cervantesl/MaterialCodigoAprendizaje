@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+   <alumno id="">
+      <nombre>
+         <principal></principal>
+         <apellidos></apellidos>
+      </nombre>
+      <mail></mail>
+      <telefono></telefono>
+      <asignaturas>
+         <aprobadas></aprobadas>
+         <suspendidas></suspendidas>
+      </asignaturas>
+   </alumno>
+</alumnos>

@@ -61,7 +61,7 @@ class SuperficieDibujo extends JPanel{
         g.drawOval(100, 75, 250, 100);
     }
 }
-public class Paisaje extends JFrame{
+public class Paisaje extends JFrame {
     
     public Paisaje() {
         setSize(700, 700);

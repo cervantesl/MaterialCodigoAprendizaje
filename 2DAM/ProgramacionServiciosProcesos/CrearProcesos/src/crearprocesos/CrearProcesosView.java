@@ -124,7 +124,7 @@ public class CrearProcesosView extends FrameView {
                 nuevoProceso = Runtime.getRuntime().exec("java -jar "
                         + "/home/usuario/NetBeansProjects/Editor/dist/DocumentEditor.jar");
             }
-
+            
             procesos.add(nuevoProceso);
             System.out.println(procesos.size());
             

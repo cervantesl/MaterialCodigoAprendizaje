@@ -1,0 +1,6 @@
+gato
+pezs
+topo
+onsa
+*
+gato,perro,oso,asno,pez,zoo

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/opcion1"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Actividad 1" />
+        <item
+            android:id="@+id/opcion2"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="AsyncTask" />
+        <item
+            android:id="@+id/opcion3"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="opcion3" />
+
+    </group>
+
+    <item android:title="Otras opciones">
+        <menu>
+            <item
+                android:id="@+id/oOpcion1"
+                android:icon="@drawable/ic_menu_share"
+                android:title="opcion1" />
+            <item
+                android:id="@+id/oOpcion2"
+                android:icon="@drawable/ic_menu_send"
+                android:title="opcion2" />
+        </menu>
+    </item>
+
+</menu>

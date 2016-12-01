@@ -1,2 +1,0 @@
-interfaces.Imagenes
-interfaces.Renderer
