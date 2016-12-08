@@ -1,0 +1,1 @@
+1) git init 2) git add. 3) git commmit -m "Add all my files" 4) git pull origin master 5) git push origin master
